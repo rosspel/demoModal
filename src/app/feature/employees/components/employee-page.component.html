@@ -1,0 +1,25 @@
+<h3>Elenco Employees</h3>
+<!--div *ngFor="let employee of employees">
+<div>
+    {{employee.name}}
+</div>
+</div-->
+
+
+<app-search (setValue)="valueFilter($event)"></app-search>
+
+<app-tabella 
+    [data]="employees" 
+    (onDataEdit)="edit($event)" 
+    (onDataRemove)="onDeleteEmployee($event)" 
+    (onDataModal)="toggleModal()">
+</app-tabella>
+
+<app-auth-modal>
+    <app-add></app-add>
+    <app-add></app-add>
+    <app-add></app-add>
+    <app-add></app-add>
+    <app-add></app-add>
+    <app-add></app-add>
+</app-auth-modal>

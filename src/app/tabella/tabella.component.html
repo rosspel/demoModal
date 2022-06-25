@@ -1,0 +1,23 @@
+
+
+<div id="container">
+<table>
+    <tr><th *ngFor="let column of columns">{{column}}</th></tr>
+    <tr><th></th></tr>
+    <tr *ngFor="let row of (filteredData$ | async); let i=index">
+        <td *ngFor="let column of columns">{{row[column]}}</td>
+        <td>
+            <button (click)="onCancel(row)">X</button>
+            <button (click)="onEdit(row)">edit</button>
+            <button (click)="openModal()">Modal</button>
+        </td>
+    </tr>
+</table>
+
+<div *ngFor="let page of pagination; let i=index">
+    <div (click)="paginateData((page+1))">{{page +1}}</div>
+</div>
+
+
+<!--app-form *ngIf="showForm" id="form" [questions]="questions$ | async"></app-form-->
+</div>

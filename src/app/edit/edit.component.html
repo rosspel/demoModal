@@ -1,0 +1,34 @@
+<!-- Update Form -->
+ <form [formGroup]="updateForm" (ngSubmit)="register()">
+    <!-- Name -->
+    <div>
+      <label>Name</label>
+     <app-input [control]="name" placeholder="Enter Name"></app-input>
+    </div>
+    <!-- Role -->
+    <div>
+      <label>Role</label>
+        <app-input [control]="role" placeholder="Enter Role"></app-input>
+    </div>
+    <!-- DepId -->
+    <div>
+      <label>Department</label>
+    <app-input [control]="depId" type="number" placeholder="Enter Department"></app-input>
+    </div>
+    <!-- Birthdate -->
+    <div>
+      <label>Birthdate</label>
+    <app-input [control]="birthdate" type="date" placeholder="Enter Birthdate"></app-input>
+    </div>
+    <!-- Email -->
+    <div>
+        <label>Email</label>
+      <app-input [control]="email" type="email" placeholder="Enter Email"></app-input>
+      </div>
+    <button type="submit"
+      class="block w-full bg-indigo-400 text-white py-1.5 px-3 rounded transition
+        hover:bg-indigo-500 disabled:opacity-50 disabled:bg-indigo-400" [disabled]="updateForm.invalid">
+      Submit
+    </button>
+  </form>
+

@@ -1,0 +1,73 @@
+           <form #addForm="ngForm" (ngSubmit)="add()">
+              <!-- Name -->
+            <div class="mb-3">
+              <label class="inline-block mb-2">Name</label>
+              <input #name="ngModel"
+              type="text"
+                class="block w-full py-1.5 px-3 text-gray-200 border border-gray-400 transition
+                  duration-500 focus:outline-none rounded bg-transparent
+                  focus:border-indigo-400"
+                placeholder="Enter Name" name="name" [(ngModel)]="credentials.name" />
+                <p *ngIf="name.errors && name.touched && name.dirty" class="text-red-400">
+                  Name is invalid
+                </p>
+            </div>
+             <!-- Role-->
+             <div class="mb-3">
+              <label class="inline-block mb-2">Role</label>
+              <input #role="ngModel"
+              type="text"
+                class="block w-full py-1.5 px-3 text-gray-200 border border-gray-400 transition
+                  duration-500 focus:outline-none rounded bg-transparent
+                  focus:border-indigo-400"
+                placeholder="Enter Role" name="role" [(ngModel)]="credentials.role" />
+                <p *ngIf="role.errors && role.touched && role.dirty" class="text-red-400">
+                  Role is invalid
+                </p>
+            </div>
+             <!-- Department -->
+             <div class="mb-3">
+              <label class="inline-block mb-2">Department</label>
+              <input #depId="ngModel"
+              type="text"
+                class="block w-full py-1.5 px-3 text-gray-200 border border-gray-400 transition
+                  duration-500 focus:outline-none rounded bg-transparent
+                  focus:border-indigo-400"
+                placeholder="Enter Department" name="depId" [(ngModel)]="credentials.depId" />
+                <p *ngIf="depId.errors && depId.touched && depId.dirty" class="text-red-400">
+                  Department is invalid
+                </p>
+            </div>
+            <!-- Birthdate -->
+              <div class="mb-3">
+                   <label class="inline-block mb-2">Password</label>
+                   <input #birthdate="ngModel"
+                          type="text" name="birthdate" [(ngModel)]="credentials.birthdate"
+                          class="block w-full py-1.5 px-3 text-gray-200 border border-gray-400 transition
+                          duration-500 focus:outline-none rounded bg-transparent focus:border-indigo-400"
+                          placeholder="Password" required pattern="(\d{2})(|-|\/|)(\d{2})(|-|\/|)(\d{4})"/>
+                          <p *ngIf="birthdate.errors && birthdate.touched && birthdate.dirty" class="text-red-400">
+                              Birthdate is invalid
+                            </p>
+                        </div>
+            <!-- Email -->
+            <div class="mb-3">
+              <label class="inline-block mb-2">Email</label>
+              <input #email="ngModel"
+              type="email"
+                class="block w-full py-1.5 px-3 text-gray-200 border border-gray-400 transition
+                  duration-500 focus:outline-none rounded bg-transparent
+                  focus:border-indigo-400"
+                placeholder="Enter Email" name="email" [(ngModel)]="credentials.email" />
+                <p *ngIf="email.errors && email.touched && email.dirty" class="text-red-400">
+                  Email is invalid
+                </p>
+            </div>
+
+            <button type="submit" [disabled]="addForm.invalid"
+              class="block w-full bg-indigo-400 text-white py-1.5 px-3 rounded transition
+                hover:bg-indigo-500">
+              Submit
+            </button>
+          </form>
+
